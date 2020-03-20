@@ -13,18 +13,28 @@ public class RegisterAction extends ActionSupport{
 	private Integer age;
 	private String email;
 	private String address;
-	private String selectedColor;
 	private List<String> colors;
+	private String selectedColor;
 	private boolean subscription;
+	private List<String> hobbies;
+	private String selectedHobbies;
+	
 	
 	public String initializeFormFields() {
 		initializeColors();
+		initializeHobbies();
 		return INPUT;
 	}
 	
 	private void initializeColors() {
 		colors = new ArrayList<>(
 				Arrays.asList("Blue", "Red", "Green", "White")
+		);
+	}
+	
+	private void initializeHobbies() {
+		hobbies = new ArrayList<String>(
+				Arrays.asList("Drawing", "Teaching", "Singing", "Programming")
 		);
 	}
 
@@ -138,6 +148,22 @@ public class RegisterAction extends ActionSupport{
 
 	public void setSubscription(boolean subscription) {
 		this.subscription = subscription;
+	}
+
+	public List<String> getHobbies() {
+		return hobbies;
+	}
+
+	public void setHobbies(List<String> hobbies) {
+		this.hobbies = hobbies;
+	}
+
+	public String getSelectedHobbies() {
+		return selectedHobbies;
+	}
+
+	public void setSelectedHobbies(String selectedHobbies) {
+		this.selectedHobbies = selectedHobbies;
 	}
 
 }

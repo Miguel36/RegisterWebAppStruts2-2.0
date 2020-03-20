@@ -22,7 +22,9 @@
 	<s:textarea name="address" label="Address" cols="30" rows="4" />
 	<s:select list="colors" name="selectedColor" headerKey="None" headerValue="Select a color" label="Favourite color" />
 	<s:checkbox name="subscription" value="true" label="Subscribe to our newsLetter" />
-	<s:reset value="reset"/><s:submit value="Register" />
+	<s:checkboxlist list="hobbies" name="selectedHobbies" label="Hobbies" />
+	<s:reset value="reset"/>
+	<s:submit value="Register" />
 </s:form>
 
 </body>

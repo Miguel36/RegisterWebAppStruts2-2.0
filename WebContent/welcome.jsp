@@ -31,7 +31,10 @@
 <s:property value="address" /><br/>
 
 <s:label value="Favourite color:" />
-<s:property value="selectedColor" />
+<s:property value="selectedColor" /><br/>
+
+<s:label value="Hobbies:" />
+<s:property value="selectedHobbies" />
 
 
 </body>
