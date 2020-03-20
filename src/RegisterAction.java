@@ -18,11 +18,13 @@ public class RegisterAction extends ActionSupport{
 	private boolean subscription;
 	private List<String> hobbies;
 	private String selectedHobbies;
+	private List<Product> products;
 	
 	
 	public String initializeFormFields() {
 		initializeColors();
 		initializeHobbies();
+		initializeProducts();
 		return INPUT;
 	}
 	
@@ -36,6 +38,14 @@ public class RegisterAction extends ActionSupport{
 		hobbies = new ArrayList<String>(
 				Arrays.asList("Drawing", "Teaching", "Singing", "Programming")
 		);
+	}
+	
+	private void initializeProducts() {
+		products = new ArrayList<Product>();
+		products.add(new Product(111, "Mobile phone", 10000));
+		products.add(new Product(222, "Camera", 30000));
+		products.add(new Product(333, "TV", 20000));
+		products.add(new Product(444, "Laptop", 30000));
 	}
 
 	public String execute() {
@@ -164,6 +174,14 @@ public class RegisterAction extends ActionSupport{
 
 	public void setSelectedHobbies(String selectedHobbies) {
 		this.selectedHobbies = selectedHobbies;
+	}
+
+	public List<Product> getProducts() {
+		return products;
+	}
+
+	public void setProducts(List<Product> products) {
+		this.products = products;
 	}
 
 }
