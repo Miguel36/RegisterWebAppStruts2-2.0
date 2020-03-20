@@ -15,23 +15,29 @@ public class RegisterAction extends ActionSupport{
 	private String address;
 	private String selectedColor;
 	private List<String> colors;
+	private boolean subscription;
 	
 	public String initializeFormFields() {
 		initializeColors();
-		return "input";
+		return INPUT;
 	}
 	
 	private void initializeColors() {
 		colors = new ArrayList<>(
 				Arrays.asList("Blue", "Red", "Green", "White")
 		);
-		
 	}
 
 	public String execute() {
 
-		initializeFormFields();
 		System.out.println("execute() method called");
+		if (subscription) {
+			System.out.println("You are a subscriber");
+		}
+		else {
+			System.out.println("You are NOT a subscriber");
+		}
+		
 		return "success";
 	}
 	
@@ -124,6 +130,14 @@ public class RegisterAction extends ActionSupport{
 
 	public void setColors(List<String> colors) {
 		this.colors = colors;
+	}
+
+	public boolean isSubscription() {
+		return subscription;
+	}
+
+	public void setSubscription(boolean subscription) {
+		this.subscription = subscription;
 	}
 
 }
